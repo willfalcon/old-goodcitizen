@@ -1,0 +1,275 @@
+/*
+Theme Name: Good Citizen
+Theme URI: http://cocreative.io
+Author: Co.Creative
+Author URI: http://cocreative.io
+Description: Wordpress theme developed for Good Citizen's eCommerce store.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: goodcitizen
+*/
+
+/*================*/
+/*=== Contents ===*/
+/*================*/
+/*-----
+- General Sitewide Styles
+- Theme Option Styles
+- Front Page Styles
+- Footer Styles
+- WooCommerce Custom Styles
+- Ninja Forms Custom Styles
+
+
+/*=============================*/
+/*== General Sitewide Styles ==*/
+/*=============================*/
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+a {
+  color: white;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.gc-nav-logo {
+  font-size: 18px;
+  max-height: 100px;
+}
+
+/*===========================*/
+/*=== Theme Option Styles ===*/
+/*===========================*/
+.gc-nav-dark,
+.gc-nav-light {
+  padding-left: 31px;
+  padding-right: 31px;
+}
+.header_dark {
+  background-color: #343a40;
+}
+i.header_dark {
+  color: #fff
+}
+i.header_light {
+  color: #343a40
+}
+
+.header_light {
+  background-color: #fff;
+  color: #343a40;
+}
+.header_light > div > ul > li > a {
+  color: #343a40;
+}
+/*
+.gc-nav-dark > div > ul > li > a {
+  color: white;
+}*/
+
+.gc-nav-light > div > ul > li > a {
+  color: black;
+}
+
+.gc-first-bg-row,
+.gc-row-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 28%;
+}
+
+
+@media (min-width: 768px) {
+  .gc-first-bg-row,
+  .gc-row-bg {
+    background-position: top;
+    background-clip: border-box;
+    background-blend-mode: overlay;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+.gc-landing-row-header_dark,
+.gc-landing-row-header_light {
+  padding-top: 8%;
+  text-align: center;
+  line-height: 2;
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.gc-landing-row-header_dark,
+div.gc-theme-dark > div {
+  color: white;
+}
+
+.gc-landing-row-header_light {
+  color: black;
+}
+
+
+/*==========================*/
+/*=== Page Option Styles ===*/
+/*==========================*/
+.gc-3_6_3-row {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.gc-col {
+  height: 100%;
+}
+
+.gc-h100 {
+  height: 100px;
+}
+.gc-h200 {
+  height: 200px;
+}
+.gc-h300 {
+  height: 300px;
+}
+.gc-h400 {
+  height: 400px;
+}
+.gc-h500 {
+  height: 500px;
+}
+.gc-h600 {
+  height: 600px;
+}
+.gc-h700 {
+  height: 700px;
+}
+/*=====================*/
+/*=== Header Styles ===*/
+/*=====================*/
+
+.gc-menu-icon {
+  color: #fff;
+  font-size: 30px;
+}
+
+.gc-bg-transparent {
+  background: transparent;
+}
+/*======================*/
+/*=== Content Styles ===*/
+/*======================*/
+ .gc-row-content-hor-left,
+ .gc-row-content-hor-center,
+ .gc-row-content-hor-right,
+ .gc-row-content-vert-top,
+ .gc-row-content-vert-center,
+ .gc-row-content-vert-bottom {
+  display: flex;
+}
+.gc-row-content-hor-left {
+  justify-content: flex-start;
+}
+.gc-row-content-hor-center {
+  justify-content: center;
+}
+.gc-row-content-hor-right {
+  justify-content: flex-end;
+}
+.gc-row-content-vert-top {
+  align-items: flex-start;
+}
+.gc-row-content-vert-center {
+  align-items: center;
+}
+.gc-row-content-vert-bottom {
+  align-items: flex-end;
+}
+.gc-card {
+  max-width: 75%
+}
+/*=====================*/
+/*=== Footer Styles ===*/
+/*=====================*/
+
+.gc-footer {
+  background-color: #23282D;
+  color: white;
+  padding: 10px 40px;
+
+}
+
+.gc-footer-col {
+  display: flex;
+  align-items: center;
+}
+
+.gc-footer-col > p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.gc-footer-right {
+  /*text-align: right;*/
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/*===============================*/
+/*== WooCommerce Custom Styles ==*/
+/*===============================*/
+.gc-shop-wrapper {
+  padding: 7%;
+}
+
+.gc-product {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.gc-product-title {
+  color: rgb(33, 37, 41);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.gc-btn {
+  text-align: center;
+}
+
+.gc-price {
+  display: block;
+  text-align: center;
+}
+
+.gc-add-to-cart {
+
+}
+
+.gc-price-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/*=============================*/
+/*=== Gravity Forms Styles ===*/
+/*=============================*/
+
+#gform_wrapper_2 {
+  margin-top: 0px;
+}
