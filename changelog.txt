@@ -1,0 +1,37 @@
+
+  [--- To Do ---]
+    - Build background image overlay color into page options.
+    - Replace row height options with number field and implement with new header styles trick.
+    - Remove any lingering references to Redux from template files.
+    - Clean up style.css.
+    - Consolidate header options between Landing Page and Info Page.
+    - Consider removing Info Page template and moving all those options to the Default Template.
+    - Add footer options for theme and page.
+
+||=======================================||
+||=== Version 1.3 - September 7, 2017 ===||
+||=======================================||
+
+  [--- Current Version Numbers ---]
+    functions.php = Version 1.1
+    fields.php = Version 1.0
+    style.css = Version 1.3
+
+      Fixes:
+        - Fix page header options on info page.
+
+
+||=======================================||
+||=== Version 1.2 - September 5, 2017 ===||
+||=======================================||
+
+  [--- Current Version Numbers ---]
+    functions.php = Version 1.0
+    fields.php = Version 1.0
+    style.css = Version 1.2
+
+      - Cleaned up functions.php.
+      - Moved ACF files to the theme and added function to hide the field group admin menu, which can be commented out for adjustments.
+      - Added file fields.php to /assets/acf/, which contains all fields and options pages to be available with theme. Version numbers will be added and updated in the changelog.
+      - Removed Redux options page and replaced with ACF options page.
+      - Removed lingering references to Redux and its functions from functions file.

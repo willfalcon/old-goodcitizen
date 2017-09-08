@@ -1,30 +1,30 @@
 /*
-Theme Name: Good Citizen
+Theme Name: Good Citizen Master
 Theme URI: http://cocreative.io
 Author: Co.Creative
 Author URI: http://cocreative.io
 Description: Wordpress theme developed for Good Citizen's eCommerce store.
-Version: 1.1
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: goodcitizen
+Text Domain: goodcitizen-master
 */
 
-/*================*/
-/*=== Contents ===*/
-/*================*/
+/*===============================*/
+/*=== style.css - Version 1.3 ===*/
+/*========== Contents ===========*/
+/*===============================*/
 /*-----
-- General Sitewide Styles
+- Sitewide Styles
 - Theme Option Styles
 - Front Page Styles
 - Footer Styles
 - WooCommerce Custom Styles
-- Ninja Forms Custom Styles
 
+/*=======================*/
+/*=== Sitewide Styles ===*/
+/*=======================*/
 
-/*=============================*/
-/*== General Sitewide Styles ==*/
-/*=============================*/
 html {
   height: 100%;
   width: 100%;
