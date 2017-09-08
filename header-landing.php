@@ -1,7 +1,5 @@
 <?php
 
-// poop
-
   $primary = array(
   //  'container_class' => '',
     'container' => false,
