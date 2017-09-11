@@ -7,7 +7,6 @@
 
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
-add_theme_support( 'custom-logo' );
 add_theme_support( 'woocommerce' );
 add_theme_support( 'widgets' );
 
@@ -24,8 +23,8 @@ function gc_theme_styles() {
 
 function gc_theme_scripts() {
   wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js', '', '', false );
-  wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/assets/js/bootstrap.js', array(jquery, popper), '', true );
-  wp_enqueue_script( 'gc_js', get_template_directory_uri() . '/assets/js/gc.js', array(jquery), '', true );
+  wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/assets/js/bootstrap.js', array( 'jquery', 'popper' ), '', true );
+  wp_enqueue_script( 'gc_js', get_template_directory_uri() . '/assets/js/gc.js', array( 'jquery' ), '', true );
 }
 
 add_action( 'init', 'register_theme_menus' );
@@ -40,11 +39,11 @@ function register_theme_menus() {
 }
 
 //add .nav-item to link tags in menus.
-function gc_nav_class($classes, $item){
+function gc_nav_a_class($classes, $item){
     $classes[] = 'nav-item';
     return $classes;
 }
-add_filter('nav_menu_css_class' , 'gc_nav_class' , 10 , 2);
+add_filter('nav_menu_css_class' , 'gc_nav_a_class' , 10 , 2);
 
 gc_create_widget( 'Shop Widget', 'shop-widget', 'Displays below the items on the shop page' );
 gc_create_widget( 'Footer', 'footer', 'Displays in the footer across the entire site' );
@@ -77,7 +76,7 @@ function my_acf_settings_dir( $dir ) {
 }
 
 // Hide ACF field group menu
-// add_filter('acf/settings/show_admin', '__return_false');
+add_filter('acf/settings/show_admin', '__return_false');
 
 include_once( get_stylesheet_directory() . '/assets/acf/acf.php' );
 
@@ -106,7 +105,7 @@ if (function_exists( 'acf_add_options_page' )) {
 
 }
 // Include fields
-// include_once( get_stylesheet_directory() . '/assets/fields.php' );
+include_once( get_stylesheet_directory() . '/assets/fields.php' );
 
 /*===================*/
 /*=== WooCommerce ===*/
@@ -167,5 +166,10 @@ add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
 function form_submit_button( $button, $form ) {
     return "<button class='btn btn-outline-secondary' id='gform_submit_button_{$form['id']}'>Submit</button>";
 }
+
+require get_parent_theme_file_path( '/inc/head_styles.php' );
+require get_parent_theme_file_path( '/inc/row_formatting.php' );
+
+
 
 ?>

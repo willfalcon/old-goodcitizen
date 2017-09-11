@@ -8,7 +8,7 @@
   $rows = get_field( 'rows' );
   $row1 = $rows[0];
   $row1image = $row1[ 'bg_img' ];
-  $headerBG = get_field( 'header_background' );
+  $gc_header_bg = get_field( 'header_background' );
 
 ?>
 
@@ -24,8 +24,10 @@
           $layout = get_sub_field('row_layout'); ?>
 
           <?php if(!empty($bgImg)): ?>
-            <?php // if transparent background is activated, don't put the background image here, put it above the nav in header.php ?>
-            <?php if($rowIndex == 1 && $headerBG['transparent_bg'] == true) : ?>
+            <?php if($rowIndex == 1 && $gc_header_bg['transparent_bg'] == true) : ?>
+              <?php // if it's the first row and transparent background is activated, don't put the background image here, put it above the nav in header.php
+                    // But set this to true so we know to close the div below.
+                    $gc_big_background_row = 'close the div'; ?>
             <?php else: ?>
               <div class="gc-row-bg" style="background-image: url( <?php echo $bgImg['url']; ?> ), linear-gradient(rgba(100,100,100,0.2),rgba(100,100,100,0.2));">
             <?php endif; endif;?>
@@ -33,13 +35,8 @@
 
           <?php get_template_part( 'components/row', $layout ); ?>
 
-          <?php if(!empty($bgImg)): ?>
-            <?php if($rowIndex == 1 && $headerBG['transparent_bg'] == true) : ?>
-            <?php else: ?>
-              </div>
-            <?php endif; endif;?>
 
-          <?php if ($row1image && $headerBG[ 'transparent_bg' ]) : ?>
+          <?php if(!empty($bgImg)): ?>
             </div>
           <?php endif;
 
