@@ -42,12 +42,14 @@
     } else {
       $mx = ' mx-2';
     }
+
+    $rowIndex = get_row_index();
+    $headerBG = get_field( 'header_background' );
+
 ?>
-<?php if(!empty($bgImg)): ?><div class="gc-row-bg" style="background-image: url( <?php echo $bgImg['url']; ?> ), linear-gradient(rgba(100,100,100,0.2),rgba(100,100,100,0.2));"><?php endif; ?>
   <div class="row<?php if(!empty($rowHeight)){echo $rowHeight;}?> gc-theme-<?php echo $theme; if(!empty($mx)){echo $mx;} if(!empty($my)){echo $my;} ?>">
     <div class="col-12 d-flex flex-column <?php if(!empty($horClass)){echo $horClass;}?> <?php if(!empty($vertClass)){echo $vertClass;} ?>">
-      <?php if(get_sub_field('row_title') && get_sub_field('show_title')): ?><h3><?php the_sub_field( 'row_title' ); ?></h3><?php endif; ?>
+      <?php if(get_sub_field('row_title') && get_sub_field('show_title')): ?><h3 class="mb-5"><?php the_sub_field( 'row_title' ); ?></h3><?php endif; ?>
       <?php the_sub_field( 'row_content' ); ?>
     </div>
   </div>
-<?php if(!empty($bgImg)): ?></div><?php endif; ?>
