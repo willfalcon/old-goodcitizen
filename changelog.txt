@@ -1,7 +1,6 @@
 
   [--- To Do ---]
     - Build background image overlay color into page options.
-    - Replace row height options with number field and implement with new header styles trick.
     - Remove any lingering references to Redux from template files.
     - Clean up style.css.
     - Consolidate header options between Landing Page and Info Page.
@@ -9,16 +8,21 @@
     - Add footer options for theme and page.
 
 ||=======================================||
-||=== Version 1.3 - September 7, 2017 ===||
+||=== Version 1.4.1 - September 10, 2017 ===||
 ||=======================================||
 
   [--- Current Version Numbers ---]
     functions.php = Version 1.1
-    fields.php = Version 1.0
+    fields.php = Version 1.1
     style.css = Version 1.3
 
+      Changes:
+        - Replaced row height options with number field and implemented with new header styles trick.
+        - Moved most template php conditional code to separate files in a new directory (/inc).
       Fixes:
         - Fix page header options on info page.
+        - Fixed dependency error that was resulting from enqueueing scripts (needed quotes around script names).
+        - Removed theme support for custom menus since functionality was replaced by custom field options.
 
 
 ||=======================================||

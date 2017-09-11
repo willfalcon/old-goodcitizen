@@ -1,54 +1,5 @@
-<?php
-
-    $theme = get_sub_field( 'theme' );
-    $bgImg = get_sub_field( 'bg_img' );
-    switch (get_sub_field( 'hor_align' )) {
-      case 'left':
-        $horClass = 'align-items-start ml-5';
-        break;
-      case 'center':
-        $horClass = 'align-items-center';
-        break;
-      case 'right':
-        $horClass = 'align-items-end mr-5 pr-5';
-        break;
-    }
-    switch (get_sub_field( 'vert_align' )) {
-      case 'top':
-        $vertClass = 'justify-content-start';
-        break;
-      case 'center':
-        $vertClass = 'justify-content-center';
-        break;
-      case 'bottom':
-        $vertClass = 'justify-content-end';
-        break;
-      case 'equal':
-        $vertClass = 'justify-content-around';
-        break;
-    }
-    if (get_sub_field('row_height') != 'auto') {
-      $rowHeight = ' gc-h' . get_sub_field('row_height');
-    } elseif (!empty($bgImg)) {
-      $rowHeight = ' gc-h700';
-    }
-
-    if (get_sub_field( 'row_my' )) {
-      $my = ' ' . get_sub_field( 'row_my' );
-    }
-
-    if (get_sub_field( 'row_mx' )) {
-      $mx = ' ' . get_sub_field( 'row_mx' );
-    } else {
-      $mx = ' mx-2';
-    }
-
-    $rowIndex = get_row_index();
-    $headerBG = get_field( 'header_background' );
-
-?>
-  <div class="row<?php if(!empty($rowHeight)){echo $rowHeight;}?> gc-theme-<?php echo $theme; if(!empty($mx)){echo $mx;} if(!empty($my)){echo $my;} ?>">
-    <div class="col-12 d-flex flex-column <?php if(!empty($horClass)){echo $horClass;}?> <?php if(!empty($vertClass)){echo $vertClass;} ?>">
+  <div class="row gc-row-<?php echo get_row_index(); ?> gc-theme-<?php the_sub_field( 'theme' ); echo gc_set_row_margins(); ?>">
+    <div class="col-12 d-flex flex-column <?php echo gc_set_row_alignment(); ?>">
       <?php if(get_sub_field('row_title') && get_sub_field('show_title')): ?><h3 class="mb-5"><?php the_sub_field( 'row_title' ); ?></h3><?php endif; ?>
       <?php the_sub_field( 'row_content' ); ?>
     </div>
