@@ -8,7 +8,7 @@
     - Add footer options for theme and page.
 
 ||=======================================||
-||=== Version 1.4 - September 10, 2017 ===||
+||=== Version 1.4.1 - September 10, 2017 ===||
 ||=======================================||
 
   [--- Current Version Numbers ---]
