@@ -1,7 +1,7 @@
 <?php
 
  /*====================================*/
- /*=== functions.php - Version 1.1 ===*/
+ /*=== functions.php - Version 1.2 ===*/
  /*====================================*/
 
 
@@ -39,11 +39,11 @@ function register_theme_menus() {
 }
 
 //add .nav-item to link tags in menus.
+add_filter('nav_menu_css_class' , 'gc_nav_a_class' , 10 , 2);
 function gc_nav_a_class($classes, $item){
     $classes[] = 'nav-item';
     return $classes;
 }
-add_filter('nav_menu_css_class' , 'gc_nav_a_class' , 10 , 2);
 
 gc_create_widget( 'Shop Widget', 'shop-widget', 'Displays below the items on the shop page' );
 gc_create_widget( 'Footer', 'footer', 'Displays in the footer across the entire site' );
@@ -64,21 +64,21 @@ function gc_create_widget( $name, $id, $description ) {
 add_filter('acf/settings/path', 'my_acf_settings_path');
 
 function my_acf_settings_path( $path ) {
-    $path = get_stylesheet_directory() . '/assets/acf/';
+    $path = get_stylesheet_directory() . '/inc/acf/';
     return $path;
 }
 
 add_filter('acf/settings/dir', 'my_acf_settings_dir');
 
 function my_acf_settings_dir( $dir ) {
-    $dir = get_stylesheet_directory_uri() . '/assets/acf/';
+    $dir = get_stylesheet_directory_uri() . '/inc/acf/';
     return $dir;
 }
 
 // Hide ACF field group menu
-add_filter('acf/settings/show_admin', '__return_false');
+//add_filter('acf/settings/show_admin', '__return_false');
 
-include_once( get_stylesheet_directory() . '/assets/acf/acf.php' );
+include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
 
 // Theme options page
 if (function_exists( 'acf_add_options_page' )) {
@@ -105,7 +105,7 @@ if (function_exists( 'acf_add_options_page' )) {
 
 }
 // Include fields
-include_once( get_stylesheet_directory() . '/assets/fields.php' );
+//include_once( get_stylesheet_directory() . '/inc/fields.php' );
 
 /*===================*/
 /*=== WooCommerce ===*/
