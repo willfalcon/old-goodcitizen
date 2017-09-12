@@ -32,8 +32,8 @@ add_action( 'init', 'register_theme_menus' );
 function register_theme_menus() {
 	register_nav_menus(
 		array(
-			'primary-menu' 	=> __( 'Primary Menu', 'goodcitizen-main' ),
-      'secondary-menu' => __( 'Secondary Menu', 'goodcitizen-secondary' )
+			'primary-menu' 	=> __( 'Center Menu', 'goodcitizen-main' ),
+      'secondary-menu' => __( 'Right-Side Menu', 'goodcitizen-secondary' )
 		)
 	);
 }
@@ -105,7 +105,7 @@ if (function_exists( 'acf_add_options_page' )) {
 
 }
 // Include fields
-//include_once( get_stylesheet_directory() . '/inc/fields.php' );
+include_once( get_stylesheet_directory() . '/inc/fields.php' );
 
 /*===================*/
 /*=== WooCommerce ===*/
