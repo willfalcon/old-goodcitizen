@@ -3,23 +3,6 @@
  * Custom template tags for theme pages.
  */
 
-// if ( ! function_exists( 'gc_build_head_styles' ) ) :
-// /**
-//  * Checks page header options and adds the css to the <style> tags in the head.
-//  */
-// function gc_build_head_styles() {
-//   /* Get 'header_background' group field from 'Page Header' field group.
-//
-//     Sub Fields:
-//     'page_header_bg_color',
-//     'transparent_bg'
-//    */
-//   $gc_header_bg = get_field( 'header_background' );
-//
-//   // Switch for whether to add the style tags to the head at all.
-//   $gc_head_styles = false;
-// }
-// endif;
 
 if ( ! function_exists( 'gc_build_head_styles' ) ) :
   /*
@@ -60,14 +43,48 @@ function gc_build_head_styles() {
         height: ' . $rowHeight . ';';
       endif;
 
-      if ( ! get_sub_field( 'bg_img' ) ) :
+      if ( ! get_sub_field( 'bg_img' ) && ($bgColor)) :
         echo '
         background-color: ' . $bgColor . ';';
       endif;
 
+      $rowMargins = get_sub_field( 'row_margins' );
+
+
+      if ($rowMargins['row_mt']) {
+        echo '
+        margin-top: ' . $rowMargins['row_mt'] . ';';
+      } elseif ($rowMargins['row_my']) {
+        echo '
+        margin-top: ' . $rowMargins['row_my'] . ';';
+      }
+
+      if ($rowMargins['row_mb']) {
+        echo '
+        margin-bottom: ' . $rowMargins['row_mb'] . ';';
+      } elseif ($rowMargins['row_my']) {
+        echo '
+        margin-bottom: ' . $rowMargins['row_my'] . ';';
+      }
+
+      if ($rowMargins['row_mr']) {
+        echo '
+        margin-right: ' . $rowMargins['row_mr'] . ';';
+      } elseif ($rowMargins['row_mx']) {
+        echo '
+        margin-right: ' . $rowMargins['row_mx'] . ';';
+      }
+
+      if ($rowMargins['row_ml']) {
+        echo '
+        margin-left: ' . $rowMargins['row_ml'] . ';';
+      } elseif ($rowMargins['row_mx']) {
+        echo '
+        margin-left: ' . $rowMargins['row_mx'] . ';';
+      }
+
     echo '
     }';
-
 
 
       // Build css for the "col" divs contained within each row div. Mainly
