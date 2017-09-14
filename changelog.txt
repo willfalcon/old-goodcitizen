@@ -1,5 +1,7 @@
 
   [--- To Do ---]
+    - Move background color option in head_styles.php to the background image div.
+    - Replace page.php with page-info.php
     - Build background image overlay color into page options.
     - Remove any lingering references to Redux from template files.
     - Clean up style.css.
@@ -14,12 +16,18 @@
 
   [--- Current Version Numbers ---]
     functions.php = Version 1.2
-    fields.php = Version 1.2
-    style.css = Version 1.3
+    fields.php = Version 1.3
+    style.css = Version 1.4
+    acf.php = Version 5.6.2
 
     Changes:
       - Moved acf to 'inc' directory and updated functions file.
       - Changed row margin fields to text fields for more flexibility.
+      - Added default row content margins of 5%.
+      - Added footer options to the options page, and added classes to fix footer responsiveness.
+      - Consolidated some styling functions better in the inc folder.
+      - Downloaded Font Awesome anew and gave it its own directory in assets folder because I deleted something at some point trying to lighten the load and broke it.
+      - Updated ACF to version 5.6.2
 
 ||==========================================||
 ||=== Version 1.4.1 - September 10, 2017 ===||
