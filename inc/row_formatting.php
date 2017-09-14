@@ -59,33 +59,64 @@ if ( ! function_exists( 'gc_set_row_alignment' ) ) :
   */
 function gc_set_row_alignment() {
 
-  switch (get_sub_field( 'hor_align' )) {
+  switch ( get_sub_field( 'hor_align' ) ) {
     case 'left':
-      $horClass = 'align-items-start ml-5';
+      $alignClass = 'align-items-start ml-5';
       break;
     case 'center':
-      $horClass = 'align-items-center';
+      $alignClass = 'align-items-center';
       break;
     case 'right':
-      $horClass = 'align-items-end mr-5 pr-5';
+      $alignClass = 'align-items-end mr-5 pr-5';
       break;
   }
 
-  switch (get_sub_field( 'vert_align' )) {
+  if ( get_sub_field( 'hor_align_md' ) ) {
+    switch ( get_sub_field( 'hor_align_md' ) ) {
+      case 'left':
+        $alignClass .= ' align-items-md-start';
+        break;
+      case 'center':
+        $alignClass .= ' align-items-md-center';
+        break;
+      case 'right':
+        $alignClass .= ' align-items-md-end';
+        break;
+    }
+  }
+
+  switch ( get_sub_field( 'vert_align' ) ) {
     case 'top':
-      $vertClass = ' justify-content-start';
+      $alignClass .= ' justify-content-start';
       break;
     case 'center':
-      $vertClass = ' justify-content-center';
+      $alignClass .= ' justify-content-center';
       break;
     case 'bottom':
-      $vertClass = ' justify-content-end';
+      $alignClass .= ' justify-content-end';
       break;
     case 'equal':
-      $vertClass = ' justify-content-around';
+      $alignClass .= ' justify-content-around';
       break;
   }
-  return $horClass . $vertClass;
+
+  if ( get_sub_field( 'vert_align_md' ) ) {
+    switch ( get_sub_field( 'vert_align_md' ) ) {
+      case 'top':
+        $alignClass .= ' justify-content-md-start';
+        break;
+      case 'center':
+        $alignClass .= ' justify-content-md-center';
+        break;
+      case 'bottom':
+        $alignClass .= ' justify-content-md-end';
+        break;
+      case 'equal':
+        $alignClass .= ' justify-content-md-around';
+        break;
+    }
+  }
+  return $alignClass;
 }
 endif;
 

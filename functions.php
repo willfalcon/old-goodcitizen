@@ -17,7 +17,7 @@ add_action( 'wp_enqueue_scripts', 'gc_theme_scripts' );
 function gc_theme_styles() {
   wp_enqueue_style( 'boostrap_css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
   wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Oxygen' );
-  wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
+  wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/fa/css/font-awesome.min.css');
   wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/style.css' );
 }
 
@@ -45,8 +45,8 @@ function gc_nav_a_class($classes, $item){
     return $classes;
 }
 
-gc_create_widget( 'Shop Widget', 'shop-widget', 'Displays below the items on the shop page' );
-gc_create_widget( 'Footer', 'footer', 'Displays in the footer across the entire site' );
+gc_create_widget( 'Shop Widget', 'shop-widget', 'Displays below the items on the shop page.' );
+gc_create_widget( 'Right-Side Footer', 'footer-right', 'Displays on the right side of the footer.' );
 
 function gc_create_widget( $name, $id, $description ) {
 	register_sidebar(array(
@@ -105,7 +105,7 @@ if (function_exists( 'acf_add_options_page' )) {
 
 }
 // Include fields
-include_once( get_stylesheet_directory() . '/inc/fields.php' );
+//include_once( get_stylesheet_directory() . '/inc/fields.php' );
 
 /*===================*/
 /*=== WooCommerce ===*/

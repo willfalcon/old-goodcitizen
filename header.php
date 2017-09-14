@@ -51,8 +51,9 @@
         </div>
 
 
-        <button class="navbar-toggler gc-menu-icon" type="button" data-toggle="collapse" data-target="#gcMainNav" aria-controls="gcMainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars <?php echo gc_header_theme(); ?>"></i>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gcMainNav" aria-controls="gcMainNav" aria-expanded="false" aria-label="Toggle navigation">
+
+           <i class="fa fa-bars fa-lg"></i>
         </button>
 
         <div class = "collapse navbar-collapse gc-navbar-collapse" id="gcMainNav">

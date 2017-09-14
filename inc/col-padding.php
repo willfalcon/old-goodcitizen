@@ -1,5 +1,95 @@
 <?php
 
+if ( get_sub_field( 'row_layout' ) == 'full-width' ) {
+
+  // Build css for the "col" divs contained within each row div. Mainly
+
+    $contentPadding = get_sub_field( 'content_padding' );
+    $rowNum = get_row_index();
+
+
+  echo '
+  .gc-row-' . $rowNum . ' > div {';
+
+      // Padding for the column content.
+    if ($contentPadding['col_pt']) :
+      echo '
+      padding-top: ' . $contentPadding['col_pt'] . ';';
+    elseif ($contentPadding['col_py']) :
+      echo '
+      padding-top: ' . $contentPadding['col_py'] . ';';
+    endif;
+
+    if ($contentPadding['col_pb']) :
+      echo '
+      padding-bottom: ' . $contentPadding['col_pb'] . ';';
+    elseif ($contentPadding['col_py']) :
+      echo '
+      padding-bottom: ' . $contentPadding['col_py'] . ';';
+    endif;
+
+    if ($contentPadding['col_pr']) :
+      echo '
+      padding-right: ' . $contentPadding['col_pr'] . ';';
+    elseif ($contentPadding['col_px']) :
+      echo '
+      padding-right: ' . $contentPadding['col_pr'] . ';';
+    endif;
+
+    if ($contentPadding['col_pl']) :
+      echo '
+      padding-left: ' . $contentPadding['col_pl'] . ';';
+    elseif ($contentPadding['col_px']) :
+      echo '
+      padding-left: ' . $contentPadding['col_px'] . ';';
+    endif;
+
+  echo '
+  }';
+
+  $mdContentPadding = get_sub_field( 'content_padding_md' );
+
+  if ( ! empty( $mdContentPadding ) ) {
+    echo '@media (min-width: 768px) {
+      .gc-row-' . $rowNum . ' > div {';
+
+        if ($mdContentPadding['col_pt']) :
+          echo '
+          padding-top: ' . $mdContentPadding['col_pt'] . ';';
+        elseif ($mdContentPadding['col_py']) :
+          echo '
+          padding-top: ' . $mdContentPadding['col_py'] . ';';
+        endif;
+
+        if ($mdContentPadding['col_pb']) :
+          echo '
+          padding-bottom: ' . $mdContentPadding['col_pb'] . ';';
+        elseif ($mdContentPadding['col_py']) :
+          echo '
+          padding-bottom: ' . $mdContentPadding['col_py'] . ';';
+        endif;
+
+        if ($mdContentPadding['col_pr']) :
+          echo '
+          padding-right: ' . $mdContentPadding['col_pr'] . ';';
+        elseif ($mdContentPadding['col_px']) :
+          echo '
+          padding-right: ' . $mdContentPadding['col_pr'] . ';';
+        endif;
+
+        if ($mdContentPadding['col_pl']) :
+          echo '
+          padding-left: ' . $mdContentPadding['col_pl'] . ';';
+        elseif ($mdContentPadding['col_px']) :
+          echo '
+          padding-left: ' . $mdContentPadding['col_px'] . ';';
+        endif;
+
+      echo '
+      }
+    }';
+  }
+}
 
 if ( get_sub_field( 'row_layout' ) == 'halves' || get_sub_field( 'row_layout' ) == '3_6_3' || get_sub_field( 'row_layout' ) == '4_col') {
   $col_1_padding = get_sub_field( 'col_1_padding' );
