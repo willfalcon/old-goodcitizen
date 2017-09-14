@@ -76,7 +76,7 @@ function my_acf_settings_dir( $dir ) {
 }
 
 // Hide ACF field group menu
-//add_filter('acf/settings/show_admin', '__return_false');
+add_filter('acf/settings/show_admin', '__return_false');
 
 include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
 
@@ -105,7 +105,7 @@ if (function_exists( 'acf_add_options_page' )) {
 
 }
 // Include fields
-//include_once( get_stylesheet_directory() . '/inc/fields.php' );
+include_once( get_stylesheet_directory() . '/inc/fields.php' );
 
 /*===================*/
 /*=== WooCommerce ===*/
